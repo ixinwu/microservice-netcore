@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataFactory>
+  <Sql001 desc="插入登录履历" coder="hulei" date="2019-9-6">
+    <Sql>
+      <![CDATA[ 
+      INSERT INTO [dbo].[Sys_Org_EmplLoginRecord]
+           ([Id]
+           ,[EmpId]
+           ,[RoleId]
+           ,[LoginName]
+           ,[EmployeeType]
+           ,[Remark]
+           ,[IsDelete]
+           ,[OrderIndex]
+           ,[CreatedTime]
+           ,[CreatedBy]
+           ,[UpdatedTime]
+           ,[UpdatedBy]
+           ,[CreatedDept]
+           ,[UpdatedDept]
+           ,[CreatedCompany]
+           ,[UpdatedCompany]
+           ,[CreatedArea]
+           ,[UpdatedArea]
+           ,[AreaId]
+           ,[IsLoginSucess]
+           ,[LoginIP])
+     VALUES
+           (@Id
+           ,@EmpId
+           ,@RoleId
+           ,@LoginName
+           ,@EmployeeType
+           ,''
+           ,''
+           ,0
+           ,GETDATE()
+           ,'System'
+           ,GETDATE()
+           ,'System'
+           ,'System'
+           ,'System'
+           ,'System'
+           ,'System'
+           ,'32'
+           ,'32'
+           ,@AreaId
+           ,@IsLoginSucess
+           ,@LoginIP)
+	    ]]>
+    </Sql>
+    <Parameters>
+      <Param name="@Id" type="string" />
+      <Param name="@EmpId" type="string" />
+      <Param name="@RoleId" type="string" />
+      <Param name="@LoginName" type="string" />
+      <Param name="@EmployeeType" type="string" />
+      <Param name="@AreaId" type="string" />
+      <Param name="@IsLoginSucess" type="string" />
+      <Param name="@LoginIP" type="string" />
+    </Parameters>
+  </Sql001>
+</DataFactory>

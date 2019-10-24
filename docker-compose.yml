@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  ngp.apigateway.base:
+    image: apigateway:lastest
+    build:
+      context: .
+      dockerfile: src/ApiGateways/NGP.ApiGateway.Base/Dockerfile
+    container_name: apigateway
+
+  ngp.identity.api:
+    image: identity:lastest
+    build:
+      context: .
+      dockerfile: src/Services/NGP.Identity.Api/Dockerfile
+    container_name: identity
+
+  ngp.global.api:
+    image: global:lastest
+    build:
+      context: .
+      dockerfile: src/Services/NGP.Global.Api/Dockerfile
+    container_name: global
+
+  ngp.globalanalysis.api:
+    image: globalanalysis:lastest
+    build:
+      context: .
+      dockerfile: src/Services/NGP.GlobalAnalysis.Api/Dockerfile
+    container_name: globalanalysis

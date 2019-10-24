@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  ngp.apigateway.base:
+    env_file:
+      - ngp-variables.env
+    ports:
+      - "5550:80"
+
+  ngp.identity.api:
+    env_file:
+      - ngp-variables.env
+    ports:
+      - "5555:80"
+
+  ngp.global.api:
+    env_file:
+      - ngp-variables.env
+    ports:
+      - "5556:80"
+
+  ngp.globalanalysis.api:
+    env_file:
+      - ngp-variables.env
+    ports:
+      - "5557:80"

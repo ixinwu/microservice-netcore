@@ -1,0 +1,92 @@
+{
+
+  "ReRoutes": [
+    /* identity */
+    {
+      // 下位配置
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      //"ServiceName": "identity",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5555
+        }
+      ],
+      // 上位配置
+      "UpstreamPathTemplate": "/identity/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+
+      /* 配置负载--可和Consul结合来使用服务发现
+       LeastConnection – 将请求发往最空闲的那个服务器
+       RoundRobin – 轮流发送
+       NoLoadBalance – 总是发往第一个请求或者是服务发现
+      */
+      /*
+       "LoadBalancer": "LeastConnection",
+       */
+    },
+    /* debtbase */
+    {
+      "DownstreamPathTemplate": "/api/debtbase/{everything}",
+      "DownstreamScheme": "http",
+      //"ServiceName": "debtbase",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5556
+        }
+      ],
+      "UpstreamPathTemplate": "/api/debtbase/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/debtbase/swagger/{everything}",
+      "DownstreamScheme": "http",
+      //"ServiceName": "debtbase",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5556
+        }
+      ],
+      "UpstreamPathTemplate": "/debtbase/swagger/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    /* ngpanalysis */
+    {
+      "DownstreamPathTemplate": "/api/ngpanalysis/{everything}",
+      "DownstreamScheme": "http",
+      //"ServiceName": "ngpanalysis",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5560
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ngpanalysis/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/ngpanalysis/swagger/{everything}",
+      "DownstreamScheme": "http",
+      //"ServiceName": "ngpanalysis",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5560
+        }
+      ],
+      "UpstreamPathTemplate": "/ngpanalysis/swagger/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{4886ACFA-46D9-4CF1-A549-97A3C5A313D5}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readmes", "readmes", "{1316D257-3C46-4252-9403-E167C35EF2B5}"
+	ProjectSection(SolutionItems) = preProject
+		readmes\1.Framework.md = readmes\1.Framework.md
+		readmes\2.Configuration.md = readmes\2.Configuration.md
+		readmes\3.DevSpecification.md = readmes\3.DevSpecification.md
+		readmes\4.DevProcess.md = readmes\4.DevProcess.md
+		readmes\5.Middlewares.md = readmes\5.Middlewares.md
+		readmes\6.DevNGP.md = readmes\6.DevNGP.md
+		readmes\7.Microservice.md = readmes\7.Microservice.md
+		readmes\8.StatusCode.md = readmes\8.StatusCode.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E80987DD-D585-442E-AE99-55D2C571DEBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{99F55D98-3BDF-402C-9F54-F59D8B2364C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{7A5133FA-943E-4536-A8AF-C8E603A898B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{7E6D4038-B3E3-4F1F-8AAE-6209A2E8F535}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1583FC54-5753-48C1-89E2-949E7386E628}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frameworks", "Frameworks", "{DABE15BF-268A-4BA7-903B-A96EEF9B76D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NGP.ApiGateway.Base", "src\ApiGateways\NGP.ApiGateway.Base\NGP.ApiGateway.Base.csproj", "{74B2CFDD-AE16-480E-A5F2-64FCA7CDBE65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedConfiguration", "SharedConfiguration", "{5B66EDBB-E488-4838-8D98-14F2210DEBCC}"
+	ProjectSection(SolutionItems) = preProject
+		src\SharedConfiguration\NGPSettiings.Development.json = src\SharedConfiguration\NGPSettiings.Development.json
+		src\SharedConfiguration\NGPSettiings.json = src\SharedConfiguration\NGPSettiings.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{350A52BB-803C-4424-8293-E82B7668E72E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NGP.Identity.Api", "src\Services\NGP.Identity.Api\NGP.Identity.Api.csproj", "{4A30BA5B-4A5C-4751-8D85-97F4D85D1EF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NGP.Framework.Core", "src\Frameworks\NGP.Framework.Core\NGP.Framework.Core.csproj", "{0FF1FE96-0F86-494E-B2C2-505A1DAE810D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B2CFDD-AE16-480E-A5F2-64FCA7CDBE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B2CFDD-AE16-480E-A5F2-64FCA7CDBE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B2CFDD-AE16-480E-A5F2-64FCA7CDBE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B2CFDD-AE16-480E-A5F2-64FCA7CDBE65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A30BA5B-4A5C-4751-8D85-97F4D85D1EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A30BA5B-4A5C-4751-8D85-97F4D85D1EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A30BA5B-4A5C-4751-8D85-97F4D85D1EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A30BA5B-4A5C-4751-8D85-97F4D85D1EF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF1FE96-0F86-494E-B2C2-505A1DAE810D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF1FE96-0F86-494E-B2C2-505A1DAE810D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF1FE96-0F86-494E-B2C2-505A1DAE810D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF1FE96-0F86-494E-B2C2-505A1DAE810D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1316D257-3C46-4252-9403-E167C35EF2B5} = {4886ACFA-46D9-4CF1-A549-97A3C5A313D5}
+		{7E6D4038-B3E3-4F1F-8AAE-6209A2E8F535} = {E80987DD-D585-442E-AE99-55D2C571DEBC}
+		{1583FC54-5753-48C1-89E2-949E7386E628} = {E80987DD-D585-442E-AE99-55D2C571DEBC}
+		{DABE15BF-268A-4BA7-903B-A96EEF9B76D8} = {E80987DD-D585-442E-AE99-55D2C571DEBC}
+		{74B2CFDD-AE16-480E-A5F2-64FCA7CDBE65} = {7E6D4038-B3E3-4F1F-8AAE-6209A2E8F535}
+		{5B66EDBB-E488-4838-8D98-14F2210DEBCC} = {E80987DD-D585-442E-AE99-55D2C571DEBC}
+		{350A52BB-803C-4424-8293-E82B7668E72E} = {1583FC54-5753-48C1-89E2-949E7386E628}
+		{4A30BA5B-4A5C-4751-8D85-97F4D85D1EF4} = {350A52BB-803C-4424-8293-E82B7668E72E}
+		{0FF1FE96-0F86-494E-B2C2-505A1DAE810D} = {DABE15BF-268A-4BA7-903B-A96EEF9B76D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDF984D9-0677-478E-A53B-2029159F5727}
+	EndGlobalSection
+EndGlobal

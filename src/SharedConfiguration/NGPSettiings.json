@@ -1,0 +1,61 @@
+{
+  "HostServer": "http://localhost:5550/",
+  "IdentityServer": "http://localhost:5550/identity",
+  "SMSHostServer": "http://localhost:5600/",
+  "ConnectionStrings": {
+    "DbConnection": "Data Source=172.16.0.104;Initial Catalog=LGDPro;Integrated Security=False;Persist Security Info=False;User ID=lgddev;Password=!Q2w3e4r;MultipleActiveResultSets=True;Max Pool Size=50000;Pooling=True"
+  },
+  "HasAppMetrics": false,
+  "InfluxDb": {
+    "ConnectionString": "http://localhost:8086",
+    "Username": "admin",
+    "Password": "admin"
+  },
+  "MachineHealthCheck": {
+    // 500M
+    "MemoryThreshold": 524288000
+  },
+  "GlobalConfiguration": {
+    "UseServiceDiscovery": false
+  }
+}
+
+// 容器环境以下参数将在lgd-variables.env进行配置
+//,
+//"GlobalConfiguration": {
+
+//  //"BaseUrl": "http://172.16.1.185:8808",
+//  //"RequestIdKey": "OcRequestId",
+//  // 是否启用服务发现
+//  "UseServiceDiscovery": true,
+//  // 服务发现配置
+//  "ServiceDiscoveryProvider": {
+//    "Host": "172.16.1.185",
+//    "Port": 8500,
+//    "Type": "Consul"
+//  },
+//  "LoadBalancer": "LeastConnection"
+//}
+//"HealthChecksUI": {
+//  "HealthChecks": [
+//    {
+//      "Name": "APIGateway",
+//      "Uri": "http://172.16.1.185:8808/hc"
+//    },
+//    {
+//      "Name": "IdentityServer",
+//      "Uri": "http://172.16.1.185:8808/identity/hc"
+//    },
+//    {
+//      "Name": "debt_api",
+//      "Uri": "http://172.16.1.185:8808/debtbase/hc"
+//    },
+//    {
+//      "Name": "ngp_analysis",
+//      "Uri": "http://172.16.1.185:8808/ngpanalysis/hc"
+//    }
+//  ],
+//  "EvaluationTimeOnSeconds": 10,
+//  "MinimumSecondsBetweenFailureNotifications": 60
+//}
+}

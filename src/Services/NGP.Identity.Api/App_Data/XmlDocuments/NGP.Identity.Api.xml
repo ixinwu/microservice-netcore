@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NGP.Identity.Api</name>
+    </assembly>
+    <members>
+        <member name="T:NGP.Identity.Api.Configs.IdentityConfig">
+            <summary>
+            一开始的数据初始化
+            </summary>
+        </member>
+        <member name="T:NGP.Identity.Api.Configs.SQLTextConfig">
+            <summary>
+            SQL文配置
+            </summary>
+        </member>
+        <member name="M:NGP.Identity.Api.Controllers.OAuthController.#ctor(NGP.Framework.Core.IUnitRepository,NGP.Framework.Core.IWebHelper)">
+            <summary>
+            ctor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="M:NGP.Identity.Api.Controllers.OAuthController.SendVerificationCode(NGP.Framework.Core.NGPSingleRequest)">
+            <summary>
+            发送验证码
+            </summary>
+            <param name="userDto"></param>
+            <returns></returns>
+            <returns></returns>
+        </member>
+        <member name="M:NGP.Identity.Api.Controllers.OAuthController.ResetPassword(NGP.Identity.Api.Models.ResetPasswordRequest)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NGP.Identity.Api.Entities.Map.SysOrg_EmpVerificationMap">
+            <summary>
+            用户验证码信息表
+            </summary>
+        </member>
+        <member name="M:NGP.Identity.Api.Entities.Map.SysOrg_EmpVerificationMap.PostConfigure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{NGP.Identity.Api.Entities.SysOrg_EmpVerification})">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:NGP.Identity.Api.Entities.SysOrg_EmpVerification">
+            <summary>
+            用户验证码信息表
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.Entities.SysOrg_EmpVerification.EmpId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.Entities.SysOrg_EmpVerification.SendTime">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.Entities.SysOrg_EmpVerification.VerificationCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:NGP.Identity.Api.IdentityDependencyRegistrar">
+            <summary>
+            全局解析依赖注入
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.IdentityDependencyRegistrar.Order">
+            <summary>
+            加载顺序
+            </summary>
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityDependencyRegistrar.Register(Autofac.ContainerBuilder,NGP.Framework.Core.ITypeFinder)">
+            <summary>
+            全局解析注入
+            </summary>
+            <param name="builder"></param>
+            <param name="typeFinder"></param>
+        </member>
+        <member name="T:NGP.Identity.Api.IdentityExtensions.IdentityServerBuilderExtensions">
+            <summary>
+            Extension methods for the IdentityServer builder
+            </summary>
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityExtensions.IdentityServerBuilderExtensions.AddNGPIdentityServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Add ngp identity server
+            </summary>
+            <param name="builder">The builder.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityExtensions.IdentityServerBuilderExtensions.InitializeIdentityDatabase(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            init identity data base
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:NGP.Identity.Api.IdentityExtensions.NGPResourceOwnerPasswordValidator">
+            <summary>
+            Resource owner password validator for test users
+            </summary>
+            <seealso cref="T:IdentityServer4.Validation.IResourceOwnerPasswordValidator" />
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityExtensions.NGPResourceOwnerPasswordValidator.#ctor(NGP.Framework.Core.IUnitRepository,Microsoft.AspNetCore.Authentication.ISystemClock,NGP.Framework.Core.IWebHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NGP.Identity.Api.IdentityExtensions.NGPResourceOwnerPasswordValidator"/> class.
+            </summary>
+            <param name="unitRepository">unitRepository.</param>
+            <param name="clock">The clock.</param>
+            <param name="webHelper">webHelper.</param>
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityExtensions.NGPResourceOwnerPasswordValidator.ValidateAsync(IdentityServer4.Validation.ResourceOwnerPasswordValidationContext)">
+            <summary>
+            Validates the resource owner password credential
+            </summary>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityExtensions.NGPResourceOwnerPasswordValidator.InsertLoginRecord(NGP.Framework.Core.SysOrg_Employee,System.String,System.Boolean)">
+            <summary>
+            添加登录履历
+            </summary>
+            <param name="emplInfo"></param>
+            <param name="loginName"></param>
+            <param name="isLoginSucess"></param>
+        </member>
+        <member name="T:NGP.Identity.Api.IdentityExtensions.NGPUserProfileService">
+            <summary>
+            Profile service for test users
+            </summary>
+            <seealso cref="T:IdentityServer4.Services.IProfileService" />
+        </member>
+        <member name="F:NGP.Identity.Api.IdentityExtensions.NGPUserProfileService._adoRepository">
+            <summary>
+            adoRepository
+            </summary>
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityExtensions.NGPUserProfileService.#ctor(NGP.Framework.Core.IAdoRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NGP.Identity.Api.IdentityExtensions.NGPUserProfileService"/> class.
+            </summary>
+            <param name="adoRepository"></param>
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityExtensions.NGPUserProfileService.GetProfileDataAsync(IdentityServer4.Models.ProfileDataRequestContext)">
+            <summary>
+            This method is called whenever claims about the user are requested (e.g. during token creation or via the userinfo endpoint)
+            </summary>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NGP.Identity.Api.IdentityExtensions.NGPUserProfileService.IsActiveAsync(IdentityServer4.Models.IsActiveContext)">
+            <summary>
+            This method gets called whenever identity server needs to determine if the user is valid or active (e.g. if the user's account has been deactivated since they logged in).
+            (e.g. during token issuance or validation).
+            </summary>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="T:NGP.Identity.Api.IdentityExtensions.SigninCredentialExtension">
+            <summary>
+            Impl of adding a signin key for identity server 4,
+            with an appsetting.json configuration look similar to:
+            "SigninKeyCredentials": {
+                "KeyType": "KeyFile",
+                "KeyFilePath": "C:\\certificates\\idsv4.pfx",
+                "KeyStorePath": ""
+            }
+            </summary>
+        </member>
+        <member name="T:NGP.Identity.Api.Models.ResetPasswordRequest">
+            <summary>
+            认证用户对象
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.Models.ResetPasswordRequest.LoginName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.Models.ResetPasswordRequest.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.Models.ResetPasswordRequest.VerificationCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:NGP.Identity.Api.Program">
+            <summary>
+            系统启动入口
+            </summary>
+        </member>
+        <member name="M:NGP.Identity.Api.Program.Main(System.String[])">
+            <summary>
+            入口函数
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:NGP.Identity.Api.Program.BuildWebHost(System.String[])">
+            <summary>
+            创建webhost
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NGP.Identity.Api.Startup">
+            <summary>
+            系统启动函数
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.Startup.Environment">
+            <summary>
+            host环境变量
+            </summary>
+        </member>
+        <member name="P:NGP.Identity.Api.Startup.Configuration">
+            <summary>
+            获取应用程序的配置
+            </summary>
+        </member>
+        <member name="M:NGP.Identity.Api.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            ctor
+            </summary>
+            <param name="environment"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:NGP.Identity.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:NGP.Identity.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            配置http管道
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="loggerFactory"></param>
+        </member>
+    </members>
+</doc>
